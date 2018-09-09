@@ -37,8 +37,8 @@ And finally, we need to update angular.json (angular-cli) to include the ag-Grid
 
 ```ruby
 "styles": [
-    "../node_modules/ag-grid-community/dist/styles/ag-grid.css",
-    "../node_modules/ag-grid-community/dist/styles/ag-theme-balham.css"
+    "./node_modules/ag-grid-community/dist/styles/ag-grid.css",
+    "./node_modules/ag-grid-community/dist/styles/ag-theme-balham.css"
 ],
 ```
 ref: https://www.ag-grid.com/ag-grid-angular-angularcli/#gsc.tab=0
