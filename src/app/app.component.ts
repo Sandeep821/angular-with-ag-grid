@@ -13,7 +13,7 @@ export class AppComponent {
     {headerName: 'Price', field: 'price'}
 ];
 
-rowData = [
+rowDataForGrid = [
     { make: 'Toyota', model: 'Celica', price: 35000 },
     { make: 'Ford', model: 'Mondeo', price: 32000 },
     { make: 'Porsche', model: 'Boxter', price: 72000 }

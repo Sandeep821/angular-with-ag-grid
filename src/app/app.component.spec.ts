@@ -1,11 +1,16 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { AgGridModule } from 'ag-grid-angular';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
       ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
+      imports: [AgGridModule.withComponents([])]
     }).compileComponents();
   }));
   it('should create the app', async(() => {
@@ -24,4 +29,5 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('Welcome to ag-grid-with-angular6!');
   }));
+  
 });
