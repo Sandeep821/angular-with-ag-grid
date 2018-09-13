@@ -16,9 +16,6 @@ describe('AppComponent', () => {
     
   }));
 
-
-  
-
   it('should create the app', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
@@ -35,23 +32,28 @@ describe('AppComponent', () => {
     it('should have expected column headers', () => {
       let component: AppComponent;
       let fixture = TestBed.createComponent(AppComponent);
+      const app = fixture.debugElement.componentInstance;
+      app.columnDefs = [{headerName: 'TestHeader', field: 'TestHeader' }]
       component = fixture.componentInstance;
       fixture.detectChanges();
+
       const elm = fixture.nativeElement;
       const grid = elm.querySelector('ag-grid-angular');
       const headerCells = grid.querySelectorAll('.ag-header-cell-text');
       const headerTitles = Array.from(headerCells).map((cell: any) =>
           cell.textContent.trim()
       );
-      expect(headerTitles).toEqual(['Make', 'Model', 'Price']);
+      expect(headerTitles).toEqual(['TestHeader']);
       });
   
       it('first row should have expected data', () => {
         let component: AppComponent;
         let fixture = TestBed.createComponent(AppComponent);
+        const app = fixture.debugElement.componentInstance;
+        app.rowData = [{ make: 'ABC', model: 'XYZ', price: 1234 }];
         component = fixture.componentInstance;
         fixture.detectChanges();
-  
+
         const elm = fixture.nativeElement;
         const grid = elm.querySelector('ag-grid-angular');
         const firstRowCells = grid.querySelectorAll(
@@ -61,7 +63,7 @@ describe('AppComponent', () => {
             cell.textContent.trim()
         );
         console.log('values', values);
-        expect(values).toEqual(['Toyota', 'Celica', '35000']);
+        expect(values).toEqual(['ABC', 'XYZ', '1234']);
        });
      });
   
