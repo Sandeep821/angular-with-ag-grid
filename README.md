@@ -42,3 +42,4 @@ And finally, we need to update angular.json (angular-cli) to include the ag-Grid
 ],
 ```
 ref: https://www.ag-grid.com/ag-grid-angular-angularcli/#gsc.tab=0
+Infinite scroll pagination Row Model : https://www.ag-grid.com/javascript-grid-infinite-scrolling/ , https://plnkr.co/edit/?p=preview
